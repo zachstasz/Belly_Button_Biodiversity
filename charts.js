@@ -83,11 +83,19 @@ function buildCharts(sample) {
       x: otuValue.slice(0, 10).reverse(),
       text: otuLabel.slice(0, 10).reverse(),
       type: "bar",
-      orientation: "h"
+      orientation: "h",
+      marker: {
+        color: 'rgb(158,202,225)',
+        opacity: 0.6,
+        line: {
+          color: 'rgb(8,48,107)',
+          width: 1.5
+        }}
   };
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: {text: 'Top 10 Bacterias Found'},
+      bgcolor: "powderblue"
      };
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", [barData], barLayout);
@@ -145,7 +153,8 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      width: 600, height: 500, margin: { t: 0, b: 0 }
+      
+
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
